@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+      maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#2196f3" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * 'self'
+      'unsafe-inline' 'unsafe-eval' data: gap:"
+    />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png" />
+    <link rel="icon" href="img/f7-icon.png" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar no-shadow">
+            <div class="navbar-bg" style="background-color: white"></div>
+            <div class="navbar-inner">
+              <div class="title-large">
+                <div class="title-large-text" style="color: blueviolet">
+                  Todo List
+                </div>
+              </div>
+              <div class="right">
+                <a href="#" class="link" onclick="deleteAllTodos()"
+                  ><i
+                    class="icon material-icons"
+                    style="font-size: 30px; color:red;"
+                    >delete</i
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="list no-hairlines">
+              <ul id="todoContainer"></ul>
+            </div>
+          </div>
+          <div class="fab fab-extended fab-center-bottom color-red">
+            <a
+              href="#"
+              class="sheet-open"
+              data-sheet=".my-sheet"
+              style="background-color: blueviolet"
+            >
+              <i class="icon f7-icons if-not-md">add</i>
+              <i class="icon material-icons md-only">add</i>
+              <div class="fab-text">ADD A NEW TASK</div>
+            </a>
+          </div>
+
+          <div class="sheet-modal my-sheet">
+            <div class="toolbar" style="background-color: blueviolet">
+              <div class="toolbar-inner">
+                <div class="left"></div>
+                <div class="right">
+                  <div class="row">
+                    <div class="col">
+                      <a class="link sheet-close" href="#" style="color: white"
+                        >Cancel</a
+                      >
+                    </div>
+                    <div class="col">
+                      <a
+                        class="link sheet-close"
+                        href="#"
+                        style="color: white"
+                        onclick="addTodo()"
+                        >Done</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-modal-inner">
+              <div class="block">
+                <h3>Add Todo List</h3>
+                <div class="list inline-labels no-hairlines-md">
+                  <ul>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-input-wrap">
+                          <textarea
+                            placeholder="Add Todo"
+                            id="todoInput"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="packages/core/js/framework7.bundle.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
